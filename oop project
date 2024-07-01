@@ -1,0 +1,77 @@
+// Step 1: Define an interface (abstract class)
+abstract class FileReadable {
+  void readFromFile(String fileName);
+}
+
+// Step 2: Implement classes with inheritance and method overrides
+
+// Base class
+class Animal {
+  String name;
+
+  Animal(this.name);
+
+  void makeSound() {
+    print('Animal makes a sound');
+  }
+}
+
+// Subclass inheriting from Animal
+class Dog extends Animal {
+  Dog(String name) : super(name);
+
+  @override
+  void makeSound() {
+    print('Dog barks');
+  }
+
+  void wagTail() {
+    print('$name wags tail');
+  }
+}
+
+// Class implementing the interface
+class Cat implements FileReadable {
+  String name = '';
+
+  @override
+  void readFromFile(String fileName) {
+    // Simulating reading data from a file
+    name = 'FromFile: $fileName';
+  }
+
+  void meow() {
+    print('$name meows');
+  }
+}
+
+// Step 3: Initialize an instance with data from a file
+
+void initializeFromFile(FileReadable obj, String fileName) {
+  obj.readFromFile(fileName);
+}
+
+// Step 4: Demonstrate the use of a loop
+
+void demonstrateLoop() {
+  for (int i = 1; i <= 3; i++) {
+    print('Loop iteration $i');
+  }
+}
+
+// Main function
+void main() {
+  // Initialize objects
+  var dog = Dog('Buddy');
+  var cat = Cat();
+
+  // Override method demonstration
+  dog.makeSound(); // Output: Dog barks
+
+  // Interface implementation demonstration
+  initializeFromFile(cat, 'data.txt');
+  cat.meow(); // Output: FromFile: data.txt meows
+
+  // Loop demonstration
+  demonstrateLoop();
+}
