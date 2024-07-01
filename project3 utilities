@@ -1,0 +1,95 @@
+// Task 1: Function to calculate the sum of two numbers
+int sum(int a, int b) {
+  return a + b;
+}
+
+// Task 2: Print numbers from 1 to 10 using a for loop
+void printNumbers() {
+  print('Task 2:');
+  for (int i = 1; i <= 10; i++) {
+    print(i);
+  }
+}
+
+// Task 3: Switch statement to check string values
+void checkString(String input) {
+  print('Task 3:');
+  switch (input) {
+    case 'apple':
+      print('It\'s a fruit');
+      break;
+    case 'car':
+      print('It\'s a vehicle');
+      break;
+    default:
+      print('Unknown');
+  }
+}
+
+// Task 4: Print numbers from 20 to 10 using a while loop
+void printNumbersWhile() {
+  print('Task 4:');
+  int num = 20;
+  while (num >= 10) {
+    print(num);
+    num--;
+  }
+}
+
+// Task 5: Check if a number is even or odd using if-else statement
+void checkEvenOdd(int number) {
+  print('Task 5:');
+  if (number % 2 == 0) {
+    print('$number is even');
+  } else {
+    print('$number is odd');
+  }
+}
+
+// Task 6: Find the largest number in a list
+int findLargest(List<int> numbers) {
+  int largest = numbers[0];
+  for (int i = 1; i < numbers.length; i++) {
+    if (numbers[i] > largest) {
+      largest = numbers[i];
+    }
+  }
+  return largest;
+}
+
+// Task 7: Use try-catch block to catch an exception
+void handleException() {
+  print('Task 7:');
+  try {
+    int result = 12 ~/ 0; // Division by zero
+    print('Result: $result');
+  } catch (e) {
+    print('Error: $e');
+  }
+}
+
+void main() {
+  // Task 1: Sum of two numbers
+  int result = sum(5, 7);
+  print('Task 1: Sum of 5 and 7 is $result');
+
+  // Task 2: Print numbers from 1 to 10
+  printNumbers();
+
+  // Task 3: Switch statement to check string values
+  checkString('apple');
+
+  // Task 4: Print numbers from 20 to 10 using a while loop
+  printNumbersWhile();
+
+  // Task 5: Check if a number is even or odd
+  checkEvenOdd(15);
+
+  // Task 6: Find the largest number in a list
+  List<int> numbers = [23, 45, 67, 12, 89, 34, 56];
+  int largestNumber = findLargest(numbers);
+  print('Task 6: Largest number in the list is $largestNumber');
+
+  // Task 7: Use try-catch block to catch an exception
+  handleException();
+}
